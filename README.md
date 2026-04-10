@@ -21,7 +21,7 @@ This project is a Python-based lead generation and CRM integration tool I built 
 from bs4 import BeautifulSoup
 import pandas as pd
 
-# Load HTML file
+Load HTML file
 file_path = "/Users/radenn/Documents/Scraper/today.txt"
 with open(file_path, "r", encoding="utf-8") as file:
     html_content = file.read()
@@ -99,9 +99,9 @@ for block in customer_blocks:
         "Notes": note_text
     })
 
-# Simpan ke Excel
+Save in Excel
 df = pd.DataFrame(data)
-output_path = "/Users/radenn/Documents/Scraper/today.xlsx"
+output_path = "/Users/Mattheus/Documents/Scraper/today.xlsx"
 df.to_excel(output_path, index=False)
 
 print("✅ File berhasil dibuat di:", output_path)
