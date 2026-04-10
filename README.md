@@ -33,7 +33,7 @@ Import:
     
     data = []
 
-for block in customer_blocks:
+Block in customer_blocks:
    
     # Member ID
     member_span = block.find("span", class_="member-id")
@@ -102,7 +102,7 @@ for block in customer_blocks:
         "Notes": note_text
     })
 
-for saving in Excel
+Saving in Excel:
   
     #Save in Excel
     df = pd.DataFrame(data)
