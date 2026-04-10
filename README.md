@@ -18,7 +18,8 @@ This project is a Python-based lead generation and CRM integration tool I built 
 - Data cleaning / parsing
 - CRM workflow automation
 
-for starting up:
+Import:
+   
     from bs4 import BeautifulSoup
     import pandas as pd
     
@@ -33,6 +34,7 @@ for starting up:
     data = []
 
 for block in customer_blocks:
+   
     # Member ID
     member_span = block.find("span", class_="member-id")
     member_id = member_span.get_text(strip=True) if member_span else ""
@@ -101,6 +103,7 @@ for block in customer_blocks:
     })
 
 for saving in Excel
+  
     #Save in Excel
     df = pd.DataFrame(data)
     output_path = "/Users/Mattheus/Documents/Scraper/today.xlsx"
