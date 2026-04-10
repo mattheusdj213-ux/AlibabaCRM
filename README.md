@@ -18,20 +18,20 @@ This project is a Python-based lead generation and CRM integration tool I built 
 - Data cleaning / parsing
 - CRM workflow automation
 
-    from bs4 import BeautifulSoup
-    import pandas as pd
+#from bs4 import BeautifulSoup
+import pandas as pd
 
-    Load HTML file
-    file_path = "/Users/radenn/Documents/Scraper/today.txt"
-    with open(file_path, "r", encoding="utf-8") as file:
-        html_content = file.read()
-    
-    soup = BeautifulSoup(html_content, "html.parser")
-    customer_blocks = soup.find_all("div", class_="private-sea-tab-customer-profile")
-    
-    data = []
-    
-    for block in customer_blocks:
+#Load HTML file
+file_path = "/Users/radenn/Documents/Scraper/today.txt"
+with open(file_path, "r", encoding="utf-8") as file:
+    html_content = file.read()
+
+soup = BeautifulSoup(html_content, "html.parser")
+customer_blocks = soup.find_all("div", class_="private-sea-tab-customer-profile")
+
+data = []
+
+for block in customer_blocks:
     # Member ID
     member_span = block.find("span", class_="member-id")
     member_id = member_span.get_text(strip=True) if member_span else ""
@@ -99,9 +99,9 @@ This project is a Python-based lead generation and CRM integration tool I built 
         "Notes": note_text
     })
     
-    Save in Excel
-    df = pd.DataFrame(data)
-    output_path = "/Users/Mattheus/Documents/Scraper/today.xlsx"
-    df.to_excel(output_path, index=False)
-    
-    print("✅ File berhasil dibuat di:", output_path)
+#Save in Excel
+df = pd.DataFrame(data)
+output_path = "/Users/Mattheus/Documents/Scraper/today.xlsx"
+df.to_excel(output_path, index=False)
+
+print("✅ File berhasil dibuat di:", output_path)
